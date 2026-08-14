@@ -22,7 +22,7 @@ Change these and the structure still holds, but the pacing will shift.
 
 A designer with a working prototype in the room changes the shape of a client conversation. The client stops describing what they imagine and starts reacting to something real. A designer who can then go on to make real changes to the client's system stops being a supplier and becomes embedded. That progression is the program.
 
-Forward-deployed means the work ships. If involvement stops at the prototype, this is prototyping with a better job title. So the governing idea every graduate must hold is not about prototypes. It's about knowing which kind of work they're doing:
+**Forward-deployed means the work ships.** If involvement stops at the prototype, this is prototyping with a better job title. So the governing idea every graduate must hold is not about prototypes. It's about knowing which kind of work they're doing:
 
 > **Everything you build is in one of two states, and you always know which one. Moving between them is a decision someone signs off on, never something that just happens.**
 

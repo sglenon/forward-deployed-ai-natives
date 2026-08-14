@@ -1,5 +1,5 @@
-# Forward-Deployed Engineering
-### A training program for converting strong product engineers into engineers who can discover, deliver, and own outcomes inside a client's environment
+# Forward-Deployed Product Engineering
+### A course for engineers who must own the problem, the product decision, and the outcome
 
 ---
 
@@ -20,15 +20,19 @@ Change these and the structure still holds, but the pacing will shift.
 
 A product engineer is usually given a problem that has already been translated: a ticket, a design, an acceptance criterion, a system boundary. A forward-deployed engineer works before that translation is complete. They sit close enough to the client's operation to see where the stated request is wrong, incomplete, or aimed at a symptom, then stay responsible long enough to put a durable change into use.
 
-The program is not about making engineers more charismatic. It is about teaching a repeatable form of technical judgment under client pressure: observe before proposing, turn ambiguity into testable claims, ship the thinnest useful thing, and leave the client's system stronger than you found it.
+The program teaches a repeatable form of product and technical judgment under client pressure: observe before proposing, turn ambiguity into testable claims, select the smallest useful change, and stay responsible until the client can use and own the result.
 
-Forward-deployed means the work ships. If involvement stops at advice, discovery, or a demo, this is consulting or prototyping with a different title. The governing idea is therefore the same one that anchors the forward-deployed designer program:
+The course changes the starting point: where a product engineer typically receives a translated requirement, a forward-deployed product engineer starts with an unclear operational need and must clarify it, define the product outcome, select what to build, and verify that it works in the operation.
+
+The engineer does not replace every product, design, commercial, or client role. The engineer owns the product thread inside the agreed boundary. This thread connects user evidence, product decisions, technical work, adoption, and outcomes.
+
+If involvement stops at advice, discovery, or a demo without shipping, the work is consulting or prototyping under a different title. The governing idea is therefore the same one that anchors the forward-deployed designer program:
 
 > **Everything you build is in one of two states, and you always know which one. Moving between them is a decision someone signs off on, never something that just happens.**
 
 ### State A: Discovery build
 
-Purpose: reduce a named uncertainty. Lifespan: days. Fictions are deliberate: sample data, a stubbed integration, or a manual step may be correct craft. The bar is *enough evidence to decide*. Success is a better decision, including deciding not to build.
+Purpose: reduce a named uncertainty. Lifespan: days. Fictions are deliberate: sample data, a stubbed integration, or a manual step may be correct craft. The bar is enough evidence to decide, including deciding not to build.
 
 The four questions a State A build is allowed to answer:
 
@@ -39,7 +43,7 @@ The four questions a State A build is allowed to answer:
 
 ### State B: Production work
 
-Purpose: create an outcome people can depend on. Lifespan: indefinite. Fictions are defects. The bar is *secure, observable, maintainable, adopted, and operable by someone other than you*. Success is not merely deployment. It is that the intended users can use it, the client can run it, and the agreed outcome moves without unacceptable regressions.
+Purpose: create an outcome people can depend on. Lifespan: indefinite. Any fiction or shortcut is a defect. The work must be secure, observable, maintainable, adopted, and operable by someone other than you. Success requires that the intended users can use it, the client can run it, and the agreed outcome moves without unacceptable regressions.
 
 This covers changes to a client's live system and any discovery build that has been formally promoted.
 
@@ -47,7 +51,40 @@ This covers changes to a client's live system and any discovery build that has b
 
 A discovery build becoming production work is often the right outcome. It happens exactly one way: a named decision owner approves it, the fictions and unresolved risks are written down, and a hardening and adoption pass is scoped as real work with real cost.
 
-The alternative is **drift**. Drift is particularly dangerous for engineers because the artifact can look technically credible long before it is operationally safe.
+The alternative is drift, where the artifact appears technically sound before the operational, security, and support work is complete.
+
+---
+
+## The product ownership skills
+
+The course teaches six connected skills.
+
+1. **Own the problem.** Learn how the operation works. Do not treat the first request as the requirement.
+2. **Clarify ambiguity.** Find the unanswered questions that can change value, scope, safety, adoption, or cost.
+3. **Specify the outcome.** Define the user flow, user stories, acceptance conditions, non-goals, and success measures.
+4. **Set priorities.** Select work by user value, risk, uncertainty, dependencies, and effort. Do not select work only because it is easy to code.
+5. **Guide decisions.** Show options and consequences. Include the correct owners. Record the decision and its reason.
+6. **Own the outcome.** Check use, adoption, exceptions, and operational results after release. Recommend whether to stop, change, expand, or transfer the work.
+
+### The product ownership loop
+
+Use this loop in each course exercise and client engagement.
+
+1. Observe one recent case.
+2. Map the current user flow.
+3. Separate the request, symptom, problem, and outcome.
+4. List important unknowns.
+5. Ask clarification questions that can change a decision.
+6. Define the target user flow.
+7. Write user stories and acceptance conditions.
+8. Select the smallest useful slice.
+9. State priorities, non-goals, assumptions, and stop conditions.
+10. Build or simulate the slice.
+11. Test it with operators.
+12. Measure the result.
+13. Recommend the next action: stop, change, expand, promote, or transfer.
+
+The documents serve as evidence of product judgment, not as the product itself. The learner must explain why the work matters, why it has this order, and what evidence can change the plan.
 
 ---
 
@@ -69,7 +106,7 @@ Output: each participant writes and says aloud a short explanation of a discover
 ## Module 1: Customer and operational literacy
 **Weeks 1–2**
 
-The goal is not to turn engineers into account managers. It is to make them capable of understanding a client's operation without prematurely translating everything into software.
+The goal is to make engineers capable of understanding a client's operation without prematurely translating everything into software.
 
 ### 1.1 Observation before solutioning
 
@@ -93,28 +130,38 @@ The goal is not to turn engineers into account managers. It is to make them capa
 - Define an outcome measure before choosing a feature.
 - Write assumptions as assumptions, not as facts hidden inside a solution proposal.
 
-### 1.4 Explaining systems without hiding behind jargon
+### 1.4 Clarification and current user flow
+
+- Identify questions that can change scope, value, safety, adoption, or cost.
+- Ask about recent behavior before you ask about preferences.
+- Ask one clear question at a time.
+- Record the answer, its source, and the decision that it affects.
+- Map the main user flow from trigger to outcome.
+- Add alternate paths, exceptions, waits, handoffs, and manual work.
+- Ask operators to correct the map.
+
+### 1.5 Explaining systems without hiding behind jargon
 
 - Start with what the system enables, then explain mechanism only as far as the audience needs.
 - Translate tradeoffs into consequences: time, reliability, access, cost, reversibility, and ownership.
 - Draw the system as people, actions, systems, data, and boundaries before drawing services and queues.
 - Say "I don't know yet" with a concrete plan to find out.
 
-### 1.5 Client-room mechanics
+### 1.6 Client-room mechanics
 
 - Set an agenda around a decision, not a tour of topics.
 - Ask one question at a time and allow silence.
 - Close every session with decisions, open questions, owners, and dates.
 - Send a concise written playback while disagreements are still cheap.
 
-**Module assessment:** observe a real or simulated workflow, produce a one-page workflow map and stakeholder map, then play back the problem and desired outcome to the people involved. The assessment passes only if the operators say, "Yes, that is how it actually works."
+**Module assessment:** observe a real or simulated workflow. Produce a one-page user-flow map and a stakeholder map. List the important unknowns. Ask clarification questions. Then play back the problem and desired outcome to the people involved. The assessment passes only if operators confirm the main flow and correct at least one specific detail.
 
 ---
 
-## Module 2: From ambiguity to a buildable intervention
+## Module 2: From ambiguity to a product decision
 **Weeks 2–3**
 
-Engineers are rewarded for converging. Client discovery requires staying open long enough to avoid converging on the wrong thing. This module provides the bridge: a disciplined path from messy evidence to a narrow build.
+Engineers are rewarded for converging. Client discovery requires them to stay open long enough to avoid the wrong solution. This module gives a clear path from evidence to a product decision and a narrow build.
 
 > **Insert the AI Excellence Playbook here.** It governs use of coding agents, client data, review, and verification. Tool-specific habits sit beneath it.
 
@@ -131,9 +178,43 @@ Before code, write one page covering:
 - data classification and approved environments;
 - open assumptions and who can resolve them.
 
-The brief is not a specification. It is the smallest shared contract that keeps technical speed attached to client value.
+The brief is the smallest shared contract that keeps technical speed attached to client value.
 
-### 2.2 Technical reconnaissance
+### 2.2 The target user flow
+
+- Start with the current user flow from Module 1.
+- Define the user, trigger, actions, decisions, exceptions, and outcome for the proposed change.
+- Show what changes and what stays the same.
+- Include human review, manual work, and fallback steps.
+- Mark assumptions and open questions.
+- Review the flow with the operators who do the work.
+
+### 2.3 User stories and acceptance conditions
+
+- Write each story for one user and one operational outcome.
+- Use this form: "As a [user], I need to [action] when [condition], so that I can [outcome]."
+- Define the starting condition, user action, expected result, and failure result.
+- Include common exceptions and unsafe outcomes.
+- State non-goals. A non-goal is work that the team will not do in this slice.
+- Remove stories that do not support the target outcome.
+
+### 2.4 Clarification and alignment check
+
+- Find vague terms, missing owners, hidden assumptions, and conflicting statements.
+- Ask only questions that can change the product or its validation.
+- Compare the brief, user flow, stories, acceptance conditions, and success measure.
+- Correct gaps before technical planning starts.
+- Ask the user, process owner, and technical owner to review the parts that they own.
+
+### 2.5 Product priority
+
+- Rank work by user value, risk, uncertainty, safety, adoption, dependencies, and effort.
+- Put the smallest useful end-to-end story first.
+- Do not put infrastructure first unless it blocks the useful story.
+- Record why work is first, later, or out of scope.
+- State what evidence can change the order.
+
+### 2.6 Technical reconnaissance
 
 - Map systems, owners, interfaces, data stores, environments, and release paths.
 - Test access and assumptions early. "The API exists" is not evidence that the required data, permission, latency, or support agreement exists.
@@ -141,37 +222,39 @@ The brief is not a specification. It is the smallest shared contract that keeps 
 - Identify rate limits, data quality, residency, retention, audit, identity, and human-approval constraints.
 - Record unknowns. Do not turn missing information into optimistic architecture.
 
-### 2.3 Choosing the thinnest useful slice
+### 2.7 Choosing the thinnest useful slice
 
 - Select one operational path, one user group, and one measurable outcome.
-- Preserve the risky part; fake the plumbing around it. A discovery build that mocks the central uncertainty proves nothing.
+- Preserve the risky part; fake the plumbing around it, because a build that mocks the central uncertainty cannot change the decision.
 - Prefer manual operations behind a clean boundary when they buy learning safely.
 - State what will not be learned from the slice.
 
-### 2.4 Designing with the client, not for them
+### 2.8 Designing with the client, not for them
 
 - Bring operators and the client's technical team into decisions that affect their work.
 - Use prototypes and diagrams as questions, not as presentations to approve.
 - Surface constraints while choices are reversible.
-- Treat client conventions as part of the requirement. A technically elegant solution the client cannot own is not elegant.
+- Treat client conventions as part of the requirement, since a solution the client cannot own or maintain fails regardless of its technical quality.
 
-### 2.5 AI-assisted delivery
+### 2.9 AI-assisted delivery
 
 - Give coding agents the engagement brief, repository rules, and the smallest relevant context.
 - Use agents for reconnaissance and options, but verify every claim against the code, environment, or an owner.
 - Separate scaffolding from constrained changes.
 - Review diffs before running generated code and before showing any output.
 - Never put client credentials, production data, or restricted material into an unapproved tool.
-- Stop when the tool crosses a boundary you did not intend; speed is not authorization.
+- Stop when the tool crosses a boundary you did not intend; moving quickly does not make unauthorized access acceptable.
 
-**Module assessment:** given a messy client request and access to a representative system, produce an engagement brief, a stakeholder-validated workflow map, a technical reconnaissance map, and a thin-slice plan. Defend what the slice proves, what it cannot prove, and which assumptions would stop the work.
+Before implementation, compare the proposed tasks with the brief and user stories. Remove tasks that do not support an accepted story. Add missing work for acceptance, exceptions, adoption, and measurement.
+
+**Module assessment:** use a messy client request and a representative system. Produce an engagement brief, a validated user flow, prioritized user stories, acceptance conditions, a technical reconnaissance map, and a thin-slice plan. Explain why the first story is first. Explain which requests you excluded. Defend what the slice proves, what it cannot prove, and which evidence will stop or change the work.
 
 ---
 
 ## Module 3: Evidence, verification, and production safety
 **Weeks 3–4. This is the most important module in the program.**
 
-The core risk is not that an engineer cannot make something work. It is that a technically working system can still be wrong for the operation, unsafe in the environment, or impossible for the client to own.
+The core risk is that a technically working system can still be wrong for the operation, unsafe in the environment, or impossible for the client to own.
 
 ### 3.1 Evidence in State A
 
@@ -216,7 +299,7 @@ This module builds the client instincts that product teams often distribute acro
 ## Module 5: Adoption, handoff, and promotion
 **Weeks 5–6**
 
-A deployment is a technical event. Adoption and ownership are the outcome.
+Deployment is a technical event; adoption and ownership are the actual outcome.
 
 ### 5.1 Handing off a discovery build
 
@@ -286,7 +369,7 @@ Nobody advances on time served or code volume. Movement requires evidence of thr
 2. they escalated something they could have quietly handled alone; and
 3. they left a system and relationship operable without them.
 
-**The Supported → Embedded gate is judgment under ambiguity.** Technical strength is a prerequisite, not the differentiator.
+The Supported → Embedded gate is primarily about judgment under ambiguity. Technical strength is a prerequisite for reaching it, but it is not what separates people who advance.
 
 ---
 
@@ -294,7 +377,7 @@ Nobody advances on time served or code volume. Movement requires evidence of thr
 
 The program fails without these, and none are the cohort's responsibility.
 
-- Real operators with protected time. Sponsor-only discovery is not discovery.
+- Real operators with protected time; validating with the sponsor alone does not substitute for access to the people doing the work.
 - A senior forward-deployed engineer with allocated mentoring time.
 - A senior client lead who owns scope, pricing, and relationship escalation.
 - Access to design, security, data, and compliance partners at defined gates.

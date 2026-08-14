@@ -1,7 +1,7 @@
-# Forward-Deployed Engineering
+# Forward-Deployed Product Engineering
 ## Modules 0 to 2, consolidated
 
-Master learner-facing reference for the Forward-Deployed Engineer course. Each `##` heading is designed to become one LMS item.
+Master learner-facing reference for the Forward-Deployed Product Engineer course. This course teaches engineers to own the problem, the product decision, and the outcome. Each `##` heading is one LMS item.
 
 Delivery is individual and self-paced, with live practice and mentor review. Items are in dependency order within each module.
 
@@ -20,19 +20,13 @@ Everything later in the program is a technique. This module is the judgment thos
 
 Most product engineering begins after someone has translated the problem. You receive a roadmap item, a design, a ticket, an acceptance criterion, or at least a product manager who owns the ambiguity. The system boundary is mostly visible and the team around you holds the customer context.
 
-Forward-deployed engineering starts earlier and stays later.
+Forward-deployed engineering starts before that translation is complete and stays involved longer. You work where the client's operation, people, data, policy, and software meet. The stated request is evidence, not a specification. You are responsible for finding the real constraint, choosing the narrowest useful intervention, putting it into the client's world, and staying long enough to prove it works and can be owned without you.
 
-You work where the client's operation, people, data, policy, and software meet. The stated request is evidence, not a specification. You are responsible for finding the real constraint, choosing the narrowest useful intervention, putting it into the client's world, and staying long enough to prove it works and can be owned without you.
+This role became necessary wherever a powerful general platform met a highly specific customer reality. Translating that platform into a specific operation was rarely straightforward; someone had to understand the customer's processes deeply enough to configure, integrate, and extend the technology around them. That person needed the technical range to build and the client judgment to avoid building the wrong thing.
 
-This role became necessary wherever a powerful general platform met a highly specific customer reality. The platform was rarely the hard part. Translation was. Someone had to understand the customer's operation deeply enough to configure, integrate, and extend the technology around it. That person needed the technical range to build and the client judgment to avoid building the wrong thing.
+AI has made this translation problem more visible, because general capability is now abundant while reliable application inside a real organization is not.
 
-AI makes this translation problem more obvious. General capability is abundant. Reliable application inside a real organization is not.
-
-> **THE PART PEOPLE GET WRONG**
->
-> Forward-deployed does not mean "the engineer who travels," "the engineer on sales calls," or "the person who makes custom demos."
->
-> **Your work changes a real operation and survives your departure.** That is the distinction.
+> Forward-deployed does not mean "the engineer who travels," "the engineer on sales calls," or "the person who makes custom demos." Your work changes a real operation and survives your departure.
 
 ### Our version of the bet is specific to you
 
@@ -43,11 +37,9 @@ The role has two halves.
 
 You already have the first half. You can read unfamiliar code, reason about systems, and ship production changes. This program does not reteach those skills.
 
-> **THE PREMISE OF THIS PROGRAM**
->
-> Your technical strength becomes more valuable when you can delay solutioning, learn from operators, and explain consequences without hiding behind implementation detail.
+Your technical strength becomes more valuable when you can delay solutioning, learn from operators, and explain consequences without hiding behind implementation detail.
 
-You are not becoming a salesperson or a product manager. You are acquiring the client and operational judgment required to own the space between a vague need and a durable outcome.
+You are not replacing the product, design, commercial, or client teams. You own the product thread inside the agreed boundary. You connect user evidence, product decisions, technical work, adoption, and outcomes.
 
 ### The three ownership tests
 
@@ -57,7 +49,36 @@ Before calling work forward-deployed, ask:
 2. **Did your technical choices follow from evidence rather than the first request?**
 3. **Can the client run, support, and extend the result when you leave?**
 
-If any answer is no, the work may still be useful. It is not yet complete.
+If any answer is no, the work may still be useful but is not yet complete.
+
+### The six product ownership skills
+
+This course teaches six connected skills.
+
+1. **Own the problem.** Learn how the operation works. Do not treat the first request as the requirement.
+2. **Clarify ambiguity.** Find questions that can change value, scope, safety, adoption, or cost.
+3. **Specify the outcome.** Define the user flow, user stories, acceptance conditions, non-goals, and success measures.
+4. **Set priorities.** Select work by user value, risk, uncertainty, dependencies, and effort.
+5. **Guide decisions.** Show options and consequences. Include the correct owners. Record the decision and its reason.
+6. **Own the outcome.** Check use, adoption, exceptions, and operational results. Recommend the next action.
+
+You will use these skills in one loop:
+
+1. Observe one recent case.
+2. Map the current user flow.
+3. Separate the request, symptom, problem, and outcome.
+4. List important unknowns.
+5. Ask questions that can change a decision.
+6. Define the target user flow.
+7. Write user stories and acceptance conditions.
+8. Select the smallest useful slice.
+9. State priorities, non-goals, assumptions, and stop conditions.
+10. Build or simulate the slice.
+11. Test it with operators.
+12. Measure the result.
+13. Recommend the next action: stop, change, expand, promote, or transfer.
+
+The documents serve as evidence of your product judgment, not as the product itself. You must explain why the work matters, why it has this order, and what evidence can change your plan.
 
 ---
 
@@ -75,11 +96,11 @@ Because your work ships, one distinction carries the whole role.
 | **Bar** | Enough evidence to decide | Secure, observable, maintainable, adopted, and operable |
 | **Success** | A better decision, including "stop" | The outcome moves and the client can own it |
 
-These are not two quality levels. They are different jobs.
+These are not two quality levels; they are different jobs with different bars and different acceptable choices.
 
 A stubbed integration may be exactly right in State A when the question is whether an operator understands the workflow. The same stub is disqualifying in State B. Conversely, building full identity, observability, and recovery before you know whether the workflow is useful can destroy the speed that makes discovery valuable.
 
-Strong engineers often dislike deliberate fictions. That instinct protects production systems, but applied too early it produces expensive evidence. The discipline is not "always build it properly." The discipline is **build exactly enough for the state you are in and label it honestly.**
+Strong engineers often dislike deliberate fictions. That instinct protects production systems, but applied too early it produces expensive evidence. The discipline is not to always build it properly but to build exactly enough for the state you are in and label it honestly.
 
 ### The four State A questions
 
@@ -90,7 +111,7 @@ Every discovery build answers one primary question.
 3. **Can the client's real data and systems support it?** A field in a slide deck is not evidence that the field exists, is reliable, is accessible, or may legally be used.
 4. **Is the value large enough to justify production work?** Technical feasibility and economic usefulness are separate questions.
 
-Write the primary question at the top of the engagement brief. If the build cannot change a decision, it is not a discovery build. It is a demo.
+Write the primary question at the top of the engagement brief. If the build cannot change a decision, it is a demo rather than a discovery build.
 
 ### Preserve the risky part
 
@@ -101,7 +122,7 @@ Discovery only works if the test includes the uncertainty.
 - If integration permissions are the risk, a local stub proves nothing.
 - If model accuracy on the client's documents is the risk, a generic benchmark proves nothing.
 
-Fake the surrounding plumbing. Preserve the thing that could make the proposed direction fail.
+Fake the surrounding plumbing and preserve the part that could actually make the proposed direction fail.
 
 ### What State A is not
 
@@ -127,15 +148,13 @@ State B is not complete when CI is green or the release reaches production.
 
 A discovery build can become production work. It happens through an explicit review:
 
-1. **A named owner decides.** Enthusiasm in a demo is not a promotion decision.
+1. **A named owner decides.** Shared enthusiasm in a demo does not substitute for a named owner's decision to promote.
 2. **The evidence is reviewed.** The decision must be no stronger than the evidence.
 3. **The fictions and risks are listed.** Every stub, shortcut, sample, manual step, untested condition, and missing owner becomes visible.
 4. **Hardening and adoption are scoped.** Security, operations, data, UX, rollout, training, and support are real work.
 5. **The artifact changes state.** From that point forward it follows the client's production controls.
 
-> **THE FAILURE THIS PREVENTS**
->
-> Drift begins with "the code is already pretty solid." That statement may be true and still irrelevant. Production readiness is a property of the whole operating system around the code, not the code alone.
+Drift often begins with the observation that "the code is already pretty solid." That may be true and still irrelevant, because production readiness is a property of the whole operating system around the code, not the code alone.
 
 ---
 
@@ -143,8 +162,7 @@ A discovery build can become production work. It happens through an explicit rev
 
 Every later module prevents one or more of these failures.
 
-### 01. The solution reflex
-`DISCOVERY FAILURE`
+### 01. The solution reflex (a discovery failure)
 
 *A client says reconciliation takes three days. Before the operator finishes explaining, you are drawing an event pipeline and proposing automated matching. The actual delay comes from a policy requiring a manager to review exceptions in a spreadsheet once each afternoon.*
 
@@ -152,8 +170,7 @@ Every later module prevents one or more of these failures.
 
 **What prevents it.** Module 1: follow one recent case end to end before proposing a system.
 
-### 02. The technically correct wrong answer
-`OUTCOME FAILURE`
+### 02. The technically correct wrong answer (an outcome failure)
 
 *The integration is secure, tested, observable, and exactly matches the requirements. Nobody uses it because it adds a second queue to a team already measured on clearing the first one.*
 
@@ -161,8 +178,7 @@ Every later module prevents one or more of these failures.
 
 **What prevents it.** Operator observation, stakeholder mapping, and an outcome measure agreed before build.
 
-### 03. The accidental commitment
-`COMMERCIAL FAILURE`
+### 03. The accidental commitment (a commercial failure)
 
 *A sponsor asks whether the production version is "basically another sprint." You explain that the core logic is straightforward. In the meeting notes, the project is now one sprint.*
 
@@ -170,8 +186,7 @@ Every later module prevents one or more of these failures.
 
 **What prevents it.** The never-alone list and a rehearsed holding phrase.
 
-### 04. The clean-code promotion
-`DRIFT IN THE ARTIFACT`
+### 04. The clean-code promotion (drift in the artifact)
 
 *The discovery build has types, tests, and a tidy architecture. Someone connects it to real data. No one reviews retention, support, rollback, or whether its AI output needs human approval.*
 
@@ -179,8 +194,7 @@ Every later module prevents one or more of these failures.
 
 **What prevents it.** State labels, a faked list, and the formal promotion review.
 
-### 05. The hero loop
-`DRIFT IN OWNERSHIP`
+### 05. The hero loop (drift in ownership)
 
 *You know the client system best, so every difficult request comes directly to you. You respond quickly. Six months later, reliability depends on your memory and the client's team has learned to wait for you.*
 
@@ -188,8 +202,7 @@ Every later module prevents one or more of these failures.
 
 **What prevents it.** Ownership transfer begins on day one. Module 5 measures whether the client can operate without you.
 
-### 06. The invisible decision-maker
-`RELATIONSHIP FAILURE`
+### 06. The invisible decision-maker (a relationship failure)
 
 *The sponsor and operators approve the solution. Security blocks production access because nobody involved them until release week.*
 
@@ -197,8 +210,7 @@ Every later module prevents one or more of these failures.
 
 **What prevents it.** Item 1.4: name every owner whose approval, data, system, or team the work depends on.
 
-### 07. The outcome-free deployment
-`STATE B FAILURE`
+### 07. The outcome-free deployment (a State B failure)
 
 *The service is live, dashboards are green, and the project is declared complete. The manual process continues beside it because the team was never trained and one common exception is unsupported.*
 
@@ -230,11 +242,7 @@ Expertise gives your words weight. In a client setting, that makes casual answer
 
 "Technically possible" may be heard as "included." "The data is encrypted" may be heard as "approved." "I can ship this Friday" may be heard as a delivery commitment. Your job is to make the missing decision visible without becoming evasive.
 
-> **READ THIS TWICE**
->
-> **Escalation is not a failure of ownership. It is how you protect the owners of decisions that are not yours.**
->
-> Advancement in this program requires evidence that you escalated something you could technically have done alone.
+Escalation protects the owners of decisions that are not yours, and is itself part of good ownership. Advancement in this program requires evidence that you escalated something you could technically have done alone.
 
 ### Your escalation paths
 
@@ -267,15 +275,13 @@ Write your own version. Say it aloud until it sounds natural. If it sounds like 
 
 A working discovery build looks like software. Your technical credibility makes it even easier for a client to assume the hard part is finished. You must replace that assumption with a useful evaluation frame.
 
-> **YOUR TASK**
->
-> Write the five or six sentences you would say when first showing a discovery build. Write for speech, not for a document.
+Write the five or six sentences you would say when first showing a discovery build. Write for speech, not for a document.
 
 ### Version A (fails)
 
 > "This is an early prototype, but the architecture is pretty clean and the main integration works. We still need to add proper auth, monitoring, and some edge cases. Assuming there are no surprises in the client environment, turning it into production should be fairly straightforward."
 
-Every sentence sounds reasonable. Together they create a commitment.
+Together, the sentences create a commitment even though each one sounds reasonable on its own.
 
 "Early" and "fairly straightforward" are vague. The passage never states what decision the artifact supports. It lists missing production work as though the list were complete before a production review has happened. It invites the client to hear that only finishing work remains.
 
@@ -283,7 +289,7 @@ Every sentence sounds reasonable. Together they create a commitment.
 
 > "This build answers one question: can we match the fields in your actual intake files reliably enough to remove the first manual sorting step? It uses the approved sample set, and a person still reviews every proposed match. The queue, identity, and downstream write are simulated because they do not affect that question. Today, I want your operations team to try the difficult files and show us where the suggested match would create the wrong action. If the evidence is strong, the next step is a separate production review covering security, integration, operations, and rollout."
 
-The artifact is the same. The conversation is different.
+The artifact has not changed; only how you frame it has.
 
 The question appears first. The central risk is preserved. The fictions are named and justified. The client receives a concrete job. Promotion is described as a separate decision rather than an implied continuation.
 
@@ -297,9 +303,7 @@ The question appears first. The central risk is preserved. The fictions are name
 - [ ] The decision that follows, without assuming the answer
 - [ ] No estimate, guarantee, or implied promotion
 
-> **THE TEST**
->
-> Read it aloud. If it sounds like a demo narration, rewrite it. If it sounds like an invitation to challenge a claim, you are done.
+Read it aloud. If it sounds like a demo narration, rewrite it. If it sounds like an invitation to challenge a claim, you are done.
 
 ---
 
@@ -312,9 +316,7 @@ Carry four things into Module 1.
 3. **The client's operation is part of the system.** People, incentives, approvals, workarounds, and policy are not "non-technical details."
 4. **Ownership includes leaving.** If the result depends on your presence, the engagement is not finished.
 
-> **BEFORE MODULE 1**
->
-> Arrange access to one operator and one recent real example of their work. A process deck is not a substitute.
+Before Module 1, arrange access to one operator and one recent real example of their work. A process deck is not a substitute.
 
 ---
 ---
@@ -338,15 +340,17 @@ That sounds slower than building. It is usually the fastest route to useful work
 - A problem statement that distinguishes evidence from assumption
 - An outcome measure with a baseline
 - A playback the client recognizes as their reality
+- A list of questions that can change a decision
+- A current user flow that includes exceptions and manual work
 
-The final assessment is not judged by your mentor first. It is judged by the people who perform the work.
+The final assessment is judged by the people who perform the work, not by your mentor first.
 
 ### The stance
 
 You are not a passive note-taker. You will form hypotheses constantly. The discipline is to hold each one lightly enough that evidence can change it.
 
-> **USE THIS SENTENCE**
->
+Practice this phrasing:
+
 > "My current hypothesis is ____. The evidence is ____. The fastest way to prove me wrong is ____."
 
 This phrasing makes uncertainty useful. It gives the room something concrete to correct without turning your first idea into a commitment.
@@ -390,7 +394,7 @@ Write a case trace with five columns:
 | ... | | | | |
 | Outcome | | | | |
 
-One real case is not the whole process. It is the first piece of evidence.
+One real case is the first piece of evidence, not a complete picture of the process.
 
 ---
 
@@ -432,9 +436,7 @@ Record the gap without shaming the operator. Workarounds are often rational resp
 
 ## 1.4 Build the stakeholder and decision map
 
-"The client" is not one person.
-
-At minimum, identify these roles. One person may hold several; several people may share one.
+"The client" covers several different roles. At minimum, identify these: One person may hold several; several people may share one.
 
 | Role | What they own |
 |---|---|
@@ -465,7 +467,7 @@ Every required decision needs a named owner. "The client will decide" is an inco
 
 ### The missing-chair check
 
-Before a decision meeting, ask: whose team, data, system, risk, or budget is affected but not represented? An empty chair is often the most important fact in the room.
+Before a decision meeting, check which teams, data owners, or budget holders are affected but not present. Those absences can block work later that appeared approved.
 
 ---
 
@@ -488,7 +490,7 @@ Use this structure:
 
 > **[Person or role]** cannot **[complete an operational job]** when **[condition]**, because **[evidence-backed constraint]**. This causes **[measured or observable consequence]**. We believe **[intervention hypothesis]** may improve **[outcome]**, and we need to test **[uncertainty].**
 
-If you cannot fill a field, write `unknown`. An honest unknown is safer than a smooth sentence containing an assumption.
+If you cannot fill a field, write `unknown` rather than constructing a plausible-sounding sentence around an assumption.
 
 ### Baseline before target
 
@@ -537,6 +539,18 @@ When someone says *usually, quickly, accurate, secure, simple, compliant, real t
 
 Ask one question. Stop. Do not rescue the room by answering your own question or offering a multiple-choice list from your architecture.
 
+### Record the effect of the answer
+
+For each important answer, record:
+
+- the question;
+- the answer;
+- the person or artifact that supplied the answer;
+- the decision that the answer affects;
+- the next action or owner.
+
+A clarification question is useful when its answer can change the work. It can change the scope, priority, user flow, safety control, acceptance condition, or stop condition.
+
 ---
 
 ## 1.7 Explain a system in the client's terms
@@ -561,7 +575,7 @@ Try:
 
 > "When a file arrives, the client system records it immediately and processes it in the background. If the same file is sent twice, it will not create two cases. That makes intake more reliable, but it also means the operations team needs a queue for files that cannot be processed automatically."
 
-The second version is not less technical. It exposes the consequence that needs a decision.
+The second version exposes the consequence that needs a decision, which is equally technical work.
 
 ### Draw two diagrams
 
@@ -601,9 +615,7 @@ Read back:
 2. evidence learned;
 3. unresolved questions;
 4. owner and due point for each follow-up;
-5. the next decision or session.
-
-"We'll circle back" is not an owner or a plan.
+5. the next decision or session, with a named owner and date — not a vague follow-up.
 
 ### Written playback
 
@@ -613,7 +625,7 @@ Send a concise playback while memory is fresh. Use the client's language. Invite
 
 ## 1.9 Handle disagreement and uncertainty
 
-Disagreement is information. It often reveals different incentives, definitions, or authority.
+Disagreement often reveals different incentives, definitions, or authority, and is itself useful information.
 
 ### Diagnose the disagreement
 
@@ -643,7 +655,7 @@ Weak: "I'm not sure."
 
 Working: "I don't know whether the source retains the field long enough for this audit. I will check the schema and retention policy with the data owner, and that answer will determine whether we use the source or record the value ourselves."
 
-Uncertainty plus a resolution path builds trust.
+A response like that builds trust because it acknowledges uncertainty while providing a concrete path to resolution.
 
 ---
 
@@ -659,7 +671,8 @@ Uncertainty plus a resolution path builds trust.
 4. a problem statement separating evidence and assumptions;
 5. a baseline and proposed outcome measure;
 6. open questions with named owners;
-7. a one-page written playback.
+7. a one-page written playback;
+8. a clarification record that shows how answers changed the problem, flow, or next decision.
 
 ### The live playback
 
@@ -683,30 +696,33 @@ Your mentor also checks:
 - Did you identify missing decision-makers?
 - Did you preserve uncomfortable evidence that contradicted your first idea?
 - Did you avoid promising a solution before Module 2?
+- Did your questions expose information that could change the work?
 
 ---
 ---
 
-# Module 2: From Ambiguity to a Buildable Intervention
+# Module 2: From Ambiguity to a Product Decision
 
-Weeks 2 to 3. Ten items, in dependency order.
+Weeks 2 to 3. Eleven items, in dependency order.
 
 ---
 
 ## 2.1 Where this module sits
 
-Module 1 produced a shared account of the operation. Module 2 turns that account into the smallest responsible piece of work.
+Module 1 produced a shared account of the operation. Module 2 turns that account into a product decision and the smallest responsible piece of work.
 
 The transition is dangerous because writing code feels like certainty. A repository, schema, and plan can make unresolved questions disappear from view without actually resolving them.
 
-> **THE RULE FOR THIS MODULE**
->
-> Every technical choice points back to evidence, an explicit assumption, or a named constraint.
+> Every technical choice must point back to evidence, an explicit assumption, or a named constraint.
 
 ### What you will be able to do by the end
 
 - Write a one-page engagement brief
 - Select one primary State A question or State B outcome
+- Define a target user flow
+- Write and prioritize user stories
+- Define clear acceptance conditions and non-goals
+- Check that the proposed work still matches the problem
 - Map the client systems, data, access, and ownership needed
 - Test the riskiest assumptions before committing architecture
 - Choose a thin slice that produces useful evidence or value
@@ -777,7 +793,82 @@ The second brief can be challenged. That is what makes it useful.
 
 ---
 
-## 2.3 Choose the decision and evidence
+## 2.3 Specify the operational change
+
+A product-owning engineer makes the proposed change clear before technical planning starts. The specification must describe the operation, not only the software.
+
+### Define the target user flow
+
+Start with the current user flow from Module 1. Define:
+
+- the user;
+- the trigger;
+- the actions and decisions;
+- the normal result;
+- the common exceptions;
+- the unsafe result to prevent;
+- the manual or fallback steps;
+- the end outcome.
+
+Show what changes and what stays the same. Mark each assumption and open question. Review the flow with the operators who do the work.
+
+### Write user stories
+
+Use this form:
+
+> As a **[user]**, I need to **[take an action]** when **[condition]**, so that I can **[reach an operational outcome]**.
+
+Each story must have one user and one outcome. Do not write a story for a database, service, model, or internal component. These items can support a story, but they do not receive value.
+
+### Define acceptance conditions
+
+For each story, define:
+
+1. the starting condition;
+2. the user action;
+3. the expected result;
+4. the result for a common exception;
+5. the unsafe result that the design must prevent;
+6. the evidence that will show whether the story is useful.
+
+Acceptance conditions must be clear and observable. "Works well," "is easy," and "is accurate" are not acceptance conditions. Define what these words mean for this user and this operation.
+
+### State non-goals
+
+A non-goal is work that this slice will not do. State non-goals before implementation. A clear non-goal prevents polite requests and technical interest from expanding the work.
+
+### Set the priority
+
+Rank each story with these factors:
+
+- user value;
+- risk if the assumption is false;
+- uncertainty;
+- safety;
+- adoption;
+- dependencies;
+- effort.
+
+Put the smallest useful end-to-end story first. Do not put infrastructure first unless it blocks that story. Record why each story is first, later, or out of scope. State what evidence can change the order.
+
+### Check alignment
+
+Compare the engagement brief, target user flow, stories, acceptance conditions, success measure, and non-goals.
+
+Ask:
+
+- Does each story support the target outcome?
+- Does each acceptance condition test the story?
+- Does the first story preserve the main uncertainty?
+- Does any planned work lack a user or outcome?
+- Does any important exception lack an owner or response?
+- Did a solution assumption become a hidden requirement?
+
+Correct the gaps before technical planning starts.
+
+---
+
+## 2.4 Choose the decision and evidence
 
 A discovery build exists to change a decision. Write the decision before choosing implementation.
 
@@ -809,7 +900,7 @@ State conclusions at the strength the evidence supports.
 
 ---
 
-## 2.4 Perform technical reconnaissance
+## 2.5 Perform technical reconnaissance
 
 Technical reconnaissance tests whether the client's real environment supports the proposed intervention. It is not a full architecture phase.
 
@@ -848,7 +939,7 @@ Check:
 - how duplicates and corrections appear;
 - how failure becomes visible.
 
-"There is an API" is not reconnaissance. Calling the approved interface with a representative case and verifying semantics is reconnaissance.
+Reconnaissance is calling the approved interface with a representative case and verifying semantics, not merely confirming "there is an API."
 
 ### Read before proposing replacement
 
@@ -856,9 +947,9 @@ If a client has an existing system, learn its conventions, tests, deployment con
 
 ---
 
-## 2.5 Classify data and access before using them
+## 2.6 Classify data and access before using them
 
-Client proximity increases access. Access is not permission to move information wherever it is convenient.
+Client proximity increases access, but access is not permission to move information wherever it is convenient.
 
 Before any build or tool use, record:
 
@@ -884,7 +975,7 @@ Stop. Record the question. Ask the data or security owner. Do not solve ambiguit
 
 ---
 
-## 2.6 Find and test the riskiest assumption
+## 2.7 Find and test the riskiest assumption
 
 List assumptions across five dimensions:
 
@@ -911,7 +1002,7 @@ If the model's behavior on poor scans is risky, use poor scans. If the user's tr
 
 ---
 
-## 2.7 Choose the thinnest useful slice
+## 2.8 Choose the thinnest useful slice
 
 A thin slice crosses the operation from a real trigger to a meaningful outcome for a narrowly chosen case. It is not merely the easiest component to code.
 
@@ -921,6 +1012,8 @@ A thin slice crosses the operation from a real trigger to a meaningful outcome f
 - **Case:** one common and bounded path
 - **System path:** the minimum interfaces required to preserve the risk
 - **Outcome:** one observable improvement or decision
+
+The slice must support the first user story. If it does not, change the slice or change the priority. Do not add technical work only because it can be useful later.
 
 ### Useful thin slice
 
@@ -932,9 +1025,7 @@ A generic extraction API tested against synthetic examples. It may be technicall
 
 ### Manual is allowed in State A
 
-A person can move a file, trigger a job, review an exception, or copy a result behind the scenes when that manual step does not invalidate the question. Put the manual step in the faked list immediately.
-
-Manual work is a discovery tactic, not a secret production architecture.
+A person can move a file, trigger a job, review an exception, or copy a result behind the scenes when that manual step does not invalidate the question. Put the manual step in the faked list immediately — it is a discovery tactic and must be explicitly listed so it is not treated as production architecture later.
 
 ### State what the slice cannot prove
 
@@ -942,7 +1033,7 @@ Every slice excludes evidence. Name the exclusions before anyone sees the result
 
 ---
 
-## 2.8 Design the intervention with the client
+## 2.9 Design the intervention with the client
 
 Do not disappear after discovery and return with a reveal.
 
@@ -955,7 +1046,7 @@ Do not disappear after discovery and return with a reveal.
 - Option table: "Which consequence is unacceptable?"
 - Runbook draft: "Who would actually receive this alert?"
 
-Specific questions produce evidence. "What do you think?" produces politeness.
+Specific questions produce evidence. Vague questions tend to produce polite but uncommitted responses.
 
 ### Include the people who inherit the consequence
 
@@ -970,7 +1061,7 @@ Not everyone joins every session. Everyone required for a decision joins before 
 
 ---
 
-## 2.9 Use AI coding tools inside the boundary
+## 2.10 Use AI coding tools inside the boundary
 
 Coding agents can compress reconnaissance and implementation. They can also create confident claims, broad changes, and new data paths faster than you can notice them.
 
@@ -983,11 +1074,9 @@ Provide only approved material, including:
 - the engagement brief;
 - repository instruction files;
 - the specific acceptance evidence;
-- the smallest relevant code and system context;
+- the smallest relevant code and system context — a broad, undirected context window is not a substitute for a clearly scoped task;
 - explicit non-goals and protected boundaries;
 - commands used for verification.
-
-Do not substitute a giant context window for a clear task.
 
 ### Separate modes
 
@@ -1003,6 +1092,9 @@ Do not substitute a giant context window for a clear task.
 
 ### Before execution
 
+- Compare the proposed tasks with the brief, user flow, and user stories.
+- Remove tasks that do not support an agreed user story.
+- Add missing work for acceptance, exceptions, adoption, and measurement.
 - Read the plan.
 - Inspect intended files and commands.
 - Check whether the tool will access a network, secret, client system, or broad filesystem area.
@@ -1027,7 +1119,7 @@ Do not substitute a giant context window for a clear task.
 
 ---
 
-## 2.10 Assessment: defend the intervention
+## 2.11 Assessment: defend the product decision
 
 You receive a messy client request, a representative codebase or environment, and access to simulated stakeholders.
 
@@ -1041,13 +1133,21 @@ You receive a messy client request, a representative codebase or environment, an
 6. thin-slice plan;
 7. faked list started before implementation;
 8. stop or redirect conditions;
-9. written client playback.
+9. target user flow;
+10. prioritized user stories;
+11. acceptance conditions and non-goals;
+12. alignment check;
+13. written client playback.
 
 ### The review
 
 You have fifteen minutes to defend:
 
 - why this is the right problem to act on;
+- who the first user is and what outcome they need;
+- why the first story is first;
+- which requests or stories you excluded;
+- how the acceptance conditions test value and failure;
 - why this is State A or State B;
 - what the work will prove;
 - what it cannot prove;
@@ -1064,6 +1164,7 @@ You have fifteen minutes to defend:
 - **Safety:** are data, access, authority, and production boundaries explicit?
 - **Decision value:** will the result enable a named owner to make a better decision?
 - **Client fit:** did operators and inheriting teams shape the intervention?
+- **Product ownership:** do the flow, stories, priorities, and acceptance conditions support the outcome?
 - **Intellectual honesty:** are unknowns and limitations visible without being used as disclaimers?
 
-The assessment does not reward the most sophisticated architecture. It rewards the clearest path from client evidence to a responsible next decision.
+The assessment rewards the clearest path from client evidence to a responsible next decision, not the most sophisticated architecture.
