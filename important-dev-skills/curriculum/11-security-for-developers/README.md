@@ -1,40 +1,49 @@
 # Module 11: Security for developers
 
-## Outcome
+## Start here
 
-Exploit common application vulnerabilities in a local synthetic environment, fix their root causes, and verify the fixes with negative tests.
+Security protects assets from actors across trust boundaries. This module uses harmless strings and an in-memory SQLite database. You will reproduce and fix ownership, SQL, mass-assignment, output, path, and secret-handling mistakes without contacting a real system.
 
-## Lab progression
+Assume Modules 1–10: HTTP inputs, SQL basics, errors, tests, and telemetry. Every new security term is defined in [LESSON.md](LESSON.md).
 
-Use an intentionally vulnerable service containing a bounded selection of:
+## Vocabulary preview
 
-- broken access control and mass assignment;
-- SQL or command injection;
-- unsafe HTML output;
-- CSRF or SSRF;
-- path traversal;
-- secret leakage and insecure defaults;
-- vulnerable dependencies or excessive privileges.
+- **Asset:** something worth protecting, such as a document or token.
+- **Trust boundary:** where data or authority enters more trusted code.
+- **Authorization:** deciding what an authenticated actor may do.
+- **Mass assignment:** allowing every submitted field to change a record.
+- **Parameterized SQL:** sending values separately from SQL syntax.
+- **Output escaping:** encoding text so it stays data in its context.
+- **Least privilege:** granting only the access a job requires.
+- **Residual risk:** harm or uncertainty that remains after a fix.
 
-For each selected issue:
+## What you will know and do
 
-1. State the precondition and potential consequence.
-2. Reproduce it locally without real credentials, data, or external targets.
-3. Trace untrusted input to the dangerous operation.
-4. Fix the boundary or design flaw.
-5. Add a regression test and check for related variants.
+- draw assets, actors, entry points, trust boundaries, and threats;
+- trace input to a dangerous sink;
+- enforce server-side authorization and explicit writable fields;
+- use parameterized SQL, HTML escaping, and safe path checks;
+- handle secrets, dependencies, configuration, and privilege safely.
 
-## Required evidence
+## Study order and time
 
-- A threat and trust-boundary diagram.
-- Reproduction commands using only the supplied local environment.
-- Before-and-after tests for each vulnerability.
-- A secret and privilege review covering code, configuration, logs, and CI.
+Read [LESSON.md](LESSON.md), keep payloads synthetic and local, then run [lab.ipynb](lab.ipynb). Stop if an experiment would leave the fixture.
 
-## Pass conditions
+## Completion checklist
 
-- The fix addresses the unsafe pattern rather than one payload string.
-- Access control is server-side and denies by default.
-- Untrusted input never reaches interpreters through string construction.
-- Secrets are absent from code, test artifacts, logs, and client responses.
-- Residual risk and required security-owner decisions are explicit.
+- [ ] I wrote three predictions about a trust boundary or input sink.
+- [ ] I reproduced at least two harmless local flaws.
+- [ ] I fixed root causes rather than filtering one string.
+- [ ] I tested allowed, denied, malformed, and variant inputs.
+- [ ] I found no secret in source, logs, prompts, or outputs.
+- [ ] I recorded residual risk and what needs a security owner.
+
+## Evidence and pass conditions
+
+Keep a scope statement, threat map, harmless before/after tests, configuration/dependency/privilege review, AI diff review, and residual-risk note. You pass when authorization is deny-by-default, untrusted input cannot reach unsafe construction, secrets stay absent, reproductions remain inside the synthetic fixture, and remaining owner decisions are explicit.
+
+## Next module
+
+Continue to [Module 12: Docker, environments, and CI/CD](../12-docker-environments-cicd/README.md), where secure boundaries extend to builds and runtime configuration.
+
+Previous: [Module 10: Logging, monitoring, and tracing](../10-logging-monitoring-tracing/README.md).

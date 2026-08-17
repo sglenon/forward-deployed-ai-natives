@@ -2,9 +2,11 @@
 
 An industry-ready developer curriculum for engineers who work with AI-generated code but must still understand, review, debug, and own the system.
 
-The curriculum builds individual engineering skills through focused exercises. Modules 1–14 cover production software foundations. Modules 15–18 extend those foundations into AI engineering.
+The curriculum builds individual engineering skills through first-principles lessons and executable practice notebooks. Modules 1–14 cover production software foundations. Modules 15–18 extend those foundations into AI engineering.
 
-The detailed topic inventory is maintained in [00-important-dev-skills-list.md](00-important-dev-skills-list.md). The module pages below define the exercises, evidence, and pass conditions.
+**New learner?** Start with the [student study guide](curriculum/README.md). It explains the required tools, how lessons and notebooks work together, how to use the reference solutions, and how to study safely with an AI coding assistant.
+
+The detailed topic inventory is maintained in [00-important-dev-skills-list.md](00-important-dev-skills-list.md). The module pages below link each teaching chapter and notebook and define the evidence and pass conditions.
 
 ## Core curriculum
 

@@ -1,31 +1,46 @@
 # Module 2: HTTP and API design
 
-## Outcome
+## Start here
 
-Design and implement a small REST API whose methods, status codes, parameters, errors, pagination, and compatibility rules are predictable to a client.
+An **API (application programming interface)** is a set of rules that lets one program ask another program to do something. HTTP is the message format commonly used for web APIs. In this module you will model HTTP with ordinary Python dictionaries; you will not start a server or contact the internet. You will build a tiny task service and make its requests, responses, errors, and collection reads predictable.
 
-## Lab progression
+You should be able to read Python functions, dictionaries, lists, and `assert` statements. Module 1's idea of a boundary helps: the router translates an incoming request, while a service performs the task operation.
 
-1. Start with deliberately inconsistent routes for a task or exception resource.
-2. Trace the request/response lifecycle, including headers and body parsing.
-3. Correct method semantics, resource paths, and status codes.
-4. Separate path identity, query controls, and request-body changes.
-5. Add filtering and cursor or page-based pagination with explicit limits.
-6. Add idempotency where replay can create duplicate work.
-7. Publish an OpenAPI contract and compare it with observed behavior.
-8. Make one additive change without breaking the original client test.
+## What you will know and do
 
-## Required evidence
+- explain a request's method, path, query, headers, and body and a response's status, headers, and body;
+- choose resource-oriented paths, method semantics, status-code classes, content types, and stable error shapes;
+- implement bounded filtering, deterministic ordering, pagination, and an idempotency key in a pure-Python service;
+- describe compatibility/versioning and represent a small OpenAPI contract as local data;
+- review AI-generated endpoint code for unbounded reads, unsafe replays, leaked internals, and breaking response changes.
 
-- Contract tests covering success, validation, absence, conflict, and server failure.
-- An API decision note for pagination, idempotency, and versioning.
-- Generated or hand-written OpenAPI validated against the running service.
-- A backward-compatibility test using the original client request.
+## Vocabulary preview
 
-## Pass conditions
+- **HTTP request/response:** a message sent to a server / the server's reply.
+- **Resource:** a thing named by an API, such as one task or a task collection.
+- **Method:** the verb describing intent, such as `GET`, `POST`, or `DELETE`.
+- **Status code:** a three-digit result; 2xx means success, 4xx means caller problem, and 5xx means server problem.
+- **Header/body:** metadata about a message / its content.
+- **Idempotent:** repeating the same operation has the same intended effect.
 
-- HTTP behavior matches the documented contract.
-- Errors use one stable representation.
-- Collection limits prevent unbounded responses.
-- Replaying an idempotent operation does not duplicate its effect.
-- The learner can distinguish transport success from business success.
+## Study order and time
+
+Plan for 90–150 minutes. Read [LESSON.md](LESSON.md), answering checks before the answers. Then run [lab.ipynb](lab.ipynb) from a fresh kernel, pausing at each prediction and TODO. Finish by restarting and running all cells top-to-bottom.
+
+## Completion checklist
+
+- [ ] I can label path, query, header, and body values in a request.
+- [ ] I wrote three predictions and compared them with explanations.
+- [ ] I bounded and deterministically ordered a collection response.
+- [ ] I tested success, invalid input, missing resource, conflict, and dependency failure.
+- [ ] I replayed an idempotent write and inspected its effect.
+- [ ] I compared observed behavior with the local OpenAPI-shaped contract.
+- [ ] I reviewed an AI-style diff and can name two rejected changes.
+
+## Evidence and pass conditions
+
+Keep request/response captures, a contract decision table, pre-edit hypotheses, positive/negative/failure checks, the compatibility test for the original client, and your AI prompt/diff review. You pass when paths, methods, statuses, errors, bounds, ordering, and response fields match the documented contract; repeated idempotency-key requests do not duplicate work; and claims stay limited to this local synthetic service. A mentor must be able to run it without credentials.
+
+## Next module
+
+Continue to [Module 3: Authentication and authorization](../03-authentication-authorization/README.md). It adds identity and permission checks at the API boundary.

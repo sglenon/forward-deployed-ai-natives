@@ -1,30 +1,48 @@
 # Module 5: SQL and database schema design
 
-## Outcome
+## Start here
 
-Design a relational schema that represents the business rules and protects data integrity independently of application code.
+A relational database stores related facts in tables. A **schema** is the table/column/constraint design. You will use Python's `sqlite3` with `:memory:` only to design an LMS enrollment schema: learners enroll in courses, courses have sections, and enrollments have a lifecycle. SQL constraints are executable promises that protect data even when application code is bypassed.
 
-## Lab progression
+You should know basic Python and Module 4's data-boundary ideas. The notebook creates and destroys its own synthetic database; never substitute a production connection.
 
-1. Model an LMS enrollment, order workflow, or document-processing system from named use cases.
-2. Identify entities, keys, relationships, cardinality, and lifecycle.
-3. Normalize repeated data and separate many-to-many relationships.
-4. Add primary, foreign, unique, check, and nullability constraints.
-5. Write joins that answer required product questions.
-6. Apply the schema through versioned migrations.
-7. Evaluate one justified denormalization against its consistency cost.
+## Vocabulary preview
 
-## Required evidence
+- **Schema:** the designed tables, columns, keys, and constraints of a database.
+- **Primary key:** a value or combination that uniquely identifies a row.
+- **Foreign key:** a reference that can require a related row to exist.
+- **Cardinality:** how many rows may relate to another row.
+- **Constraint:** a database rule that rejects invalid data.
+- **Normalization:** storing each changing fact in one appropriate place.
+- **Migration:** a repeatable, ordered change to a schema.
 
-- An entity-relationship diagram tied to actual queries and rules.
-- Migration up and rollback evidence in a disposable database.
-- Tests showing constraints reject orphaned, duplicate, and invalid data.
-- Example queries for one detail view, one aggregate, and one lifecycle transition.
+The full [lesson](LESSON.md) turns an enrollment use case into these structures.
 
-## Pass conditions
+## What you will know and do
 
-- Keys and constraints encode named business invariants.
-- Relationship tables and delete behavior are explicit.
-- Migrations are repeatable and do not depend on manual edits.
-- The learner can explain what the database guarantees and what remains in application logic.
-- Any denormalization has an owner and synchronization strategy.
+- explain tables, rows, columns, primary/foreign keys, cardinality, and many-to-many relationship tables;
+- use `NOT NULL`, `UNIQUE`, `CHECK`, and foreign-key enforcement for named invariants;
+- write parameterized joins, aggregates, lifecycle queries, and repeatable migrations;
+- choose cascade/restrict behavior and distinguish normalized source-of-truth data from justified denormalization;
+- review AI SQL for missing constraints, unsafe cascades, dialect assumptions, and destructive edits.
+
+## Study order and time
+
+Read [LESSON.md](LESSON.md), draw the entities before opening [lab.ipynb](lab.ipynb), and run the notebook from a fresh kernel. Plan 90–150 minutes.
+
+## Completion checklist
+
+- [ ] I named invariants before writing SQL.
+- [ ] I tested duplicate membership, orphan references, invalid statuses, missing fields, and delete behavior.
+- [ ] I ran a detail join, aggregate, and lifecycle query with parameters.
+- [ ] I can recreate the schema and roll it back in a disposable database.
+- [ ] I separated database guarantees from application-only rules.
+- [ ] I justified (or rejected) one denormalization and reviewed AI SQL.
+
+## Evidence and pass conditions
+
+Keep the use cases, ER sketch, cardinality/invariant table, migration output, positive/negative checks, query results, delete behavior, dialect assumptions, and AI diff. Pass means constraints encode the named invariants, joins/lifecycle queries are correct, migrations are repeatable, and no denormalized value lacks a source of truth and stale-data plan.
+
+## Next module
+
+Continue to [Module 6: Database performance and transactions](../06-database-performance-transactions/README.md), where you will measure queries and protect concurrent updates.

@@ -1,32 +1,48 @@
 # Module 4: API validation and data contracts
 
-## Outcome
+## Start here
 
-Turn an API that accepts arbitrary JSON into one with explicit request, response, and error contracts.
+Validation is the act of checking whether input has an allowed shape and value before business logic runs. A **data contract** is the shared promise about fields, types, omissions, and errors. You will build explicit standard-library validators for a task API: parse a request, validate an input model, map it to a domain model, and serialize a safe response. No package or network is needed.
 
-## Lab progression
+You should know JSON-like dictionaries, lists, strings, numbers, and Module 2 API boundaries. Every example uses synthetic bounded payloads.
 
-1. Reproduce mass assignment, wrong types, missing fields, unknown fields, unsafe nesting, and invalid enum values.
-2. Gate supported content types and body sizes.
-3. Add a schema for each write operation rather than one universal model.
-4. Reject unknown input and map allowed fields explicitly.
-5. Separate input, domain, and response models.
-6. Normalize validation failures into the API error contract.
-7. Add contract tests for optional, nullable, and omitted values.
+## Vocabulary preview
 
-Use the project’s standard schema tool, such as Pydantic, Zod, JSON Schema, or an equivalent. The concepts matter more than the library.
+- **Parsing:** turning incoming bytes or JSON-like data into a program value.
+- **Validation:** checking that a value has an allowed shape and meaning.
+- **Serialization:** shaping internal data for a client response.
+- **Nullable:** allowed to contain `null`.
+- **Omitted:** not supplied at all; it may mean “leave unchanged.”
+- **Enum:** a finite set of allowed values.
+- **Mass assignment:** copying caller fields into protected internal fields.
 
-## Required evidence
+The full [lesson](LESSON.md) works through these ideas before the notebook.
 
-- A payload corpus containing valid, boundary, malformed, and malicious examples.
-- Tests that show the unsafe baseline and the final rejection behavior.
-- Request and response schemas visible in the OpenAPI contract where applicable.
-- A field-level error example that is useful without exposing internals.
+## What you will know and do
 
-## Pass conditions
+- distinguish parsing, validation, serialization, request/domain/response models;
+- explain required, optional, nullable, omitted, defaulted, enum, nested, and unknown fields;
+- reject wrong types, unsupported media, oversized/deep payloads, and protected/mass-assignment fields;
+- return stable field-level errors before state mutation;
+- review AI schemas for silent coercion, permissive unknown fields, and accidentally exposed storage fields.
 
-- Invalid states are rejected before business logic runs.
-- Unknown fields cannot alter protected state.
-- Response serialization does not leak internal or sensitive fields.
-- Errors are stable enough for a client to act on.
-- The learner can explain required, optional, nullable, defaulted, and omitted values.
+## Study order and time
+
+Read [LESSON.md](LESSON.md), pause for the checks, then execute [lab.ipynb](lab.ipynb) in a fresh kernel. Plan 90–150 minutes and keep a payload corpus in your notes.
+
+## Completion checklist
+
+- [ ] I can explain `null` versus omitted for create and update.
+- [ ] I tested valid, boundary, malformed, unknown, protected, oversized, and unsafe-nesting payloads.
+- [ ] Invalid input is rejected before business logic or persistence.
+- [ ] Input, domain, and response mappings are separate.
+- [ ] Errors are stable without stack traces or internals.
+- [ ] I reviewed AI coercions and schema options line by line.
+
+## Evidence and pass conditions
+
+Keep the payload corpus, baseline/final mutation counts, field errors, contract comparison, and AI review. Pass means invalid types, missing values, enums, media, size, structure, unknown/protected fields are consistently handled; response exposure is intentional; and all claims are local and reproducible.
+
+## Next module
+
+Continue to [Module 5: SQL and database schema design](../05-sql-schema-design/README.md), where validated data meets durable constraints.

@@ -1,31 +1,48 @@
 # Module 12: Docker, environments, and CI/CD
 
-## Outcome
+## Start here
 
-Package an API and its dependencies into a repeatable environment, then build an automated path from pull request checks to a reversible deployment.
+Packaging is a promise that the same inputs produce a runnable artifact. You will study Dockerfiles, Compose-like service descriptions, and CI pipelines as data—without invoking Docker, a shell, a network, or writing secrets to disk.
 
-## Lab progression
+Assume Modules 1–11: configuration, tests, security, health, and release failure concepts. Optional terminal practice is not required for the notebook.
 
-1. Containerize the API with a small, non-root runtime image.
-2. Run the API, PostgreSQL, and Redis or queue dependency through Compose.
-3. Separate configuration from code and distinguish development, test, staging, and production values.
-4. Keep secrets out of images, repository history, and logged environment dumps.
-5. Add CI stages for formatting or linting, tests, security checks, and image build.
-6. Pin or record dependency and image versions sufficiently for repeatability.
-7. Add a deployment gate, health verification, and rollback procedure.
-8. Rehearse a failed release and rollback in a disposable environment.
+## Vocabulary preview
 
-## Required evidence
+- **Image:** packaged filesystem and metadata used to start containers.
+- **Container:** a running process created from an image.
+- **Stage:** a part of a multi-stage build with its own files/tools.
+- **Runtime user:** the OS identity running the process.
+- **Compose service/volume:** a described component / mounted storage.
+- **CI gate:** an automated check that can stop a later stage.
+- **Artifact:** an identifiable build output.
+- **Readiness/rollback:** evidence a candidate can serve / returning to a known-good release.
 
-- A clean build from a fresh checkout.
-- CI output for both a failing and passing change.
-- Image inspection showing the expected user, files, and configuration behavior.
-- Timestamped deployment and rollback drill notes.
+## What you will know and do
 
-## Pass conditions
+- distinguish images, containers, stages, users, ports, volumes, and services;
+- separate runtime configuration and secrets from source and image layers;
+- validate Compose and CI definitions as structured text;
+- design pinned inputs and gates for tests, health, migration, promotion, and rollback.
 
-- Local and CI commands produce the same test result.
-- Runtime images contain no development secrets or unnecessary build tools.
-- Migrations have an explicit place in the release sequence.
-- Health verification can block or reverse a bad release.
-- Rollback limitations, including database compatibility, are documented.
+## Study order and time
+
+Read [LESSON.md](LESSON.md), then run [lab.ipynb](lab.ipynb) from a fresh kernel. The notebook never calls Docker, `subprocess`, or a shell.
+
+## Completion checklist
+
+- [ ] I wrote three predictions about a build or release risk.
+- [ ] I can explain why a non-root runtime and pinned input matter.
+- [ ] I validated a Dockerfile, service fragment, and CI stage list.
+- [ ] I kept synthetic secrets out of artifacts and logs.
+- [ ] I showed a failing gate before build/promotion.
+- [ ] I wrote a readiness, migration, and rollback limitation.
+
+## Evidence and pass conditions
+
+Keep validation results, expected runtime user/files/ports, configuration and secret policy, failing/passing gate transcripts, release order, rollback note, and AI diff review. You pass when local/CI inputs match, runtime is appropriately minimal/non-root, gates stop bad candidates, secrets stay out of artifacts/logs, and data compatibility limits are explicit.
+
+## Next module
+
+Continue to [Module 13: Scalability and production system design](../13-scalability-system-design/README.md), where measurements choose the next bounded change.
+
+Previous: [Module 11: Security for developers](../11-security-for-developers/README.md).
