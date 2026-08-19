@@ -1,7 +1,7 @@
-# Forward-Deployed Product Engineering
+# CAST Product Engineering
 ## Modules 0 to 2, consolidated
 
-Master learner-facing reference for the Forward-Deployed Product Engineer course. This course teaches engineers to own the problem, the product decision, and the outcome. Each `##` heading is one LMS item.
+Master learner-facing reference for the Client AI Solutions Team (CAST) Product Engineering course. This course teaches CAST engineers to own the problem, the product decision, and the outcome. Each `##` heading is one LMS item.
 
 Delivery is individual and self-paced, with live practice and mentor review. Items are in dependency order within each module.
 
@@ -20,13 +20,13 @@ Everything later in the program is a technique. This module is the judgment thos
 
 Most product engineering begins after someone has translated the problem. You receive a roadmap item, a design, a ticket, an acceptance criterion, or at least a product manager who owns the ambiguity. The system boundary is mostly visible and the team around you holds the customer context.
 
-Forward-deployed engineering starts before that translation is complete and stays involved longer. You work where the client's operation, people, data, policy, and software meet. The stated request is evidence, not a specification. You are responsible for finding the real constraint, choosing the narrowest useful intervention, putting it into the client's world, and staying long enough to prove it works and can be owned without you.
+CAST engineering starts before that translation is complete and stays involved longer. You work where the client's operation, people, data, policy, and software meet. The stated request is evidence, not a specification. You are responsible for finding the real constraint, choosing the narrowest useful intervention, putting it into the client's world, and staying long enough to prove it works and can be owned without you.
 
 This role became necessary wherever a powerful general platform met a highly specific customer reality. Translating that platform into a specific operation was rarely straightforward; someone had to understand the customer's processes deeply enough to configure, integrate, and extend the technology around them. That person needed the technical range to build and the client judgment to avoid building the wrong thing.
 
 AI has made this translation problem more visible, because general capability is now abundant while reliable application inside a real organization is not.
 
-> Forward-deployed does not mean "the engineer who travels," "the engineer on sales calls," or "the person who makes custom demos." Your work changes a real operation and survives your departure.
+> CAST does not mean "the engineer who travels," "the engineer on sales calls," or "the person who makes custom demos." Your work changes a real operation and survives your departure.
 
 ### Our version of the bet is specific to you
 
@@ -43,7 +43,7 @@ You are not replacing the product, design, commercial, or client teams. You own 
 
 ### The three ownership tests
 
-Before calling work forward-deployed, ask:
+Before calling work CAST, ask:
 
 1. **Did you learn how the operation really works from the people doing it?**
 2. **Did your technical choices follow from evidence rather than the first request?**
@@ -61,6 +61,23 @@ This course teaches six connected skills.
 4. **Set priorities.** Select work by user value, risk, uncertainty, dependencies, and effort.
 5. **Guide decisions.** Show options and consequences. Include the correct owners. Record the decision and its reason.
 6. **Own the outcome.** Check use, adoption, exceptions, and operational results. Recommend the next action.
+
+### Product thinking is the decision layer
+
+Product thinking does not mean becoming a product manager or adding ceremonies to an engagement. It means making explicit choices about who matters, which problem is worth solving, what should change in the operation, and how the organization will know the change created value.
+
+For every intervention, work through this table:
+
+| Product question | Evidence to seek | Decision it supports |
+|---|---|---|
+| Who has the job and who experiences the pain? | Recent cases, role observation, workflow evidence | Whose problem is primary and whose needs are constraints? |
+| What is the job, not just the request? | Trigger, current workaround, desired outcome | What problem are we actually addressing? |
+| Why is this worth changing now? | Baseline, frequency, cost, risk, strategic context | Whether to act, wait, or do nothing |
+| What alternatives exist? | Process change, configuration, existing product, integration, build | Which intervention has the best value and ownership profile? |
+| What behavior or operational result should change? | Target flow, adoption evidence, outcome metric | What success means and how it will be observed |
+| Who owns the result after delivery? | Support model, technical owner, process owner, rollout plan | Whether the result can survive your departure |
+
+You are not expected to make every product decision alone. You are expected to surface the decision, make options and tradeoffs legible, involve the correct owner, and keep the work connected to a user and an outcome.
 
 You will use these skills in one loop:
 
@@ -255,9 +272,9 @@ Escalation protects the owners of decisions that are not yours, and is itself pa
 | Production access or release | *[client technical owner]* | Before action |
 | Data classification or tool approval | *[security/data owner]* | Before data is accessed or moved |
 | Compliance or legal interpretation | *[named compliance/legal owner]* | Before representing a position |
-| Long-lived architecture | *[client technical owner]* + *[FDE lead]* | Before implementation |
+| Long-lived architecture | *[client technical owner]* + *[CAST lead]* | Before implementation |
 | Client relationship going sideways | *[senior client lead]* | Immediately |
-| Something you cannot categorize | *[FDE lead]* | Immediately |
+| Something you cannot categorize | *[CAST lead]* | Immediately |
 
 ### The holding phrase
 
@@ -323,7 +340,7 @@ Before Module 1, arrange access to one operator and one recent real example of t
 
 # Module 1: Customer and Operational Literacy
 
-Weeks 1 to 2. Ten items, in dependency order.
+Weeks 1 to 2. Eleven items, in dependency order.
 
 ---
 
@@ -508,7 +525,57 @@ Avoid false precision. "In eight sampled cases, five waited overnight for owner 
 
 ---
 
-## 1.6 Ask questions that change decisions
+## 1.6 Frame the product opportunity
+
+Understanding the problem is necessary but not sufficient. Product thinking asks whether the problem is worth changing, for whom, and what kind of intervention is most responsible.
+
+### Do not collapse different roles into "the user"
+
+The operator may use the workflow, the customer may receive the result, the sponsor may fund it, the buyer may approve it, and the process owner may be accountable for performance. Their interests can conflict.
+
+Record the roles explicitly:
+
+| Role | Question to answer |
+|---|---|
+| Operator | What job are they trying to complete, and what makes it difficult? |
+| End user or customer | What result do they experience, and what would make it better or worse? |
+| Sponsor or buyer | Why does this matter now, and what investment or risk are they willing to accept? |
+| Process owner | Which outcome, policy, or service level are they accountable for? |
+| Technical, data, or security owner | What must be true for the intervention to be safe and supportable? |
+
+### Consider the whole intervention set
+
+Do not assume the answer is a new feature. Consider:
+
+- changing the process or policy;
+- clarifying ownership or an approval rule;
+- configuring an existing capability;
+- buying or integrating an existing product;
+- building a new capability;
+- intentionally doing nothing for now.
+
+The best product decision may be a non-technical change. A custom build is justified only when it creates more value than the alternatives and the client can own the resulting obligation.
+
+### Write a product hypothesis
+
+Use this format:
+
+> We believe **[user or role]** struggles to **[job]** because **[evidence-backed constraint]**. If we **[intervention]**, they will **[behavior or operational change]**, resulting in **[measurable outcome]**. We will test this with **[evidence]**, and we will change direction if **[disconfirming signal]**.
+
+Separate the product hypothesis from the technical hypothesis. "The API can process the file" is not the same as "the operator can complete the job faster and with acceptable risk."
+
+### Output
+
+Add a product opportunity note to the case trace:
+
+1. primary user and affected roles;
+2. job, pain, and consequence of inaction;
+3. alternatives considered;
+4. product hypothesis;
+5. outcome, behavior, and guardrail measures;
+6. owner of the decision.
+
+## 1.7 Ask questions that change decisions
 
 Good discovery questions make a decision easier. Weak questions merely collect opinions.
 
@@ -553,7 +620,7 @@ A clarification question is useful when its answer can change the work. It can c
 
 ---
 
-## 1.7 Explain a system in the client's terms
+## 1.8 Explain a system in the client's terms
 
 You will often need to explain an architecture, constraint, or failure to people who should not need your vocabulary to participate.
 
@@ -587,7 +654,7 @@ The diagrams should connect. If a technical component cannot be tied to an opera
 
 ---
 
-## 1.8 Run and close a client session
+## 1.9 Run and close a client session
 
 A client session is useful when it changes shared understanding or enables a decision.
 
@@ -623,7 +690,7 @@ Send a concise playback while memory is fresh. Use the client's language. Invite
 
 ---
 
-## 1.9 Handle disagreement and uncertainty
+## 1.10 Handle disagreement and uncertainty
 
 Disagreement often reveals different incentives, definitions, or authority, and is itself useful information.
 
@@ -659,7 +726,7 @@ A response like that builds trust because it acknowledges uncertainty while prov
 
 ---
 
-## 1.10 Assessment: playback the operation
+## 1.11 Assessment: playback the operation
 
 **The task:** observe a real or simulated workflow and play it back to the people involved.
 
@@ -672,7 +739,8 @@ A response like that builds trust because it acknowledges uncertainty while prov
 5. a baseline and proposed outcome measure;
 6. open questions with named owners;
 7. a one-page written playback;
-8. a clarification record that shows how answers changed the problem, flow, or next decision.
+8. a product opportunity note with alternatives and a product hypothesis;
+9. a clarification record that shows how answers changed the problem, flow, or next decision.
 
 ### The live playback
 
@@ -693,6 +761,9 @@ Your mentor also checks:
 
 - Did you use real examples rather than only generalized claims?
 - Did the proposed outcome belong to the client rather than to the software?
+- Did you distinguish the operator, customer, sponsor, buyer, and decision owner where they differed?
+- Did you consider process change, existing capability, and doing nothing alongside a custom build?
+- Did your product hypothesis connect a user behavior change to an operational outcome?
 - Did you identify missing decision-makers?
 - Did you preserve uncomfortable evidence that contradicted your first idea?
 - Did you avoid promising a solution before Module 2?
@@ -718,10 +789,12 @@ The transition is dangerous because writing code feels like certainty. A reposit
 ### What you will be able to do by the end
 
 - Write a one-page engagement brief
+- Write a product hypothesis and compare intervention options
 - Select one primary State A question or State B outcome
 - Define a target user flow
 - Write and prioritize user stories
 - Define clear acceptance conditions and non-goals
+- Define outcome, behavior, and guardrail measures
 - Check that the proposed work still matches the problem
 - Map the client systems, data, access, and ownership needed
 - Test the riskiest assumptions before committing architecture
@@ -754,6 +827,13 @@ The engagement brief is the smallest shared contract between client reality and 
 - What prevents the outcome?
 - What recent examples support that claim?
 - What is the baseline?
+
+**Product case**
+
+- Why is this problem worth acting on now?
+- Who is the primary user, and who else is affected?
+- What alternatives were considered: process change, configuration, buy, integrate, build, or do nothing?
+- What is the product hypothesis, and what evidence would disprove it?
 
 **Target outcome**
 
@@ -796,6 +876,22 @@ The second brief can be challenged. That is what makes it useful.
 ## 2.3 Specify the operational change
 
 A product-owning engineer makes the proposed change clear before technical planning starts. The specification must describe the operation, not only the software.
+
+### Choose the intervention before the implementation
+
+The first product decision is not which framework or model to use. It is which intervention has the best combination of user value, feasibility, safety, adoption, viability, and ownership.
+
+Compare the credible options:
+
+| Option | Value created | Main tradeoff or risk | Reversibility | Owner after change | Why selected or rejected |
+|---|---|---|---|---|---|
+| Change process or policy | | | | | |
+| Configure existing capability | | | | | |
+| Buy or integrate | | | | | |
+| Build | | | | | |
+| Do nothing or defer | | | | | |
+
+Do not create a false comparison. If an option is not credible, say why. The table exists to make the recommendation and its consequences visible to the people who own them.
 
 ### Define the target user flow
 
@@ -883,6 +979,19 @@ Examples:
 - The process owner can decide whether assisted extraction is worth a production proposal based on field accuracy and analyst review time across the representative sample.
 - The technical owner can choose between batch and event integration based on the required decision deadline, source availability, and failure recovery.
 - The sponsor can stop the dashboard proposal if operators confirm the delay occurs before the data reaches the reporting system.
+
+### Measure value, behavior, and guardrails
+
+Use a small measurement set:
+
+| Measure type | What it tells you | Example |
+|---|---|---|
+| Outcome | Whether the operation improved | Time from intake to correct owner assignment |
+| Behavior or adoption | Whether people are using the change as intended | Share of eligible cases processed through the new path |
+| Quality or guardrail | Whether the improvement creates unacceptable harm | Critical-field error rate, unresolved exceptions, or added review time |
+| Operating cost | Whether the result is sustainable | Support effort, vendor cost, latency, or manual work remaining |
+
+For each measure, name the baseline, target or threshold, observation window, source, and owner. A feature being available is a delivery fact, not a value measure.
 
 ### Evidence table
 
@@ -1126,18 +1235,20 @@ You receive a messy client request, a representative codebase or environment, an
 ### What you hand in
 
 1. engagement brief;
-2. primary decision and evidence table;
-3. technical reconnaissance map;
-4. data and access record;
-5. ranked assumptions;
-6. thin-slice plan;
-7. faked list started before implementation;
-8. stop or redirect conditions;
-9. target user flow;
-10. prioritized user stories;
-11. acceptance conditions and non-goals;
-12. alignment check;
-13. written client playback.
+2. product hypothesis and alternatives table;
+3. primary decision and evidence table;
+4. measurement plan with outcome, behavior, guardrail, and operating-cost measures;
+5. technical reconnaissance map;
+6. data and access record;
+7. ranked assumptions;
+8. thin-slice plan;
+9. faked list started before implementation;
+10. stop or redirect conditions;
+11. target user flow;
+12. prioritized user stories;
+13. acceptance conditions and non-goals;
+14. alignment check;
+15. written client playback.
 
 ### The review
 
@@ -1145,7 +1256,9 @@ You have fifteen minutes to defend:
 
 - why this is the right problem to act on;
 - who the first user is and what outcome they need;
+- why this intervention is preferable to process change, configuration, buying, integrating, or doing nothing;
 - why the first story is first;
+- how value, adoption, quality, and operating cost will be measured;
 - which requests or stories you excluded;
 - how the acceptance conditions test value and failure;
 - why this is State A or State B;
@@ -1163,6 +1276,7 @@ You have fifteen minutes to defend:
 - **Thinness:** is this the smallest slice that still tests the real risk?
 - **Safety:** are data, access, authority, and production boundaries explicit?
 - **Decision value:** will the result enable a named owner to make a better decision?
+- **Product judgment:** did the learner choose an intervention based on value, evidence, adoption, viability, and ownership rather than defaulting to build?
 - **Client fit:** did operators and inheriting teams shape the intervention?
 - **Product ownership:** do the flow, stories, priorities, and acceptance conditions support the outcome?
 - **Intellectual honesty:** are unknowns and limitations visible without being used as disclaimers?

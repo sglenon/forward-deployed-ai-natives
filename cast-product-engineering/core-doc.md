@@ -1,5 +1,5 @@
-# Forward-Deployed Product Engineering
-### A course for engineers who must own the problem, the product decision, and the outcome
+# CAST Product Engineering
+### A course for CAST engineers who must own the problem, the product decision, and the outcome
 
 ---
 
@@ -9,7 +9,7 @@ Change these and the structure still holds, but the pacing will shift.
 
 - **Cohort:** 4–6 engineers, run together rather than individually.
 - **Duration:** 8 weeks, roughly 6–8 hours per week, alongside existing delivery work.
-- **Support:** each cohort has one senior forward-deployed engineer (technical and engagement judgment), one senior client lead (commercial and relationship questions), and access to a designer or product partner for workflow and usability review. Mentors are not full-time on this.
+- **Support:** each cohort has one senior CAST engineer (technical and engagement judgment), one senior client lead (commercial and relationship questions), and access to a designer or product partner for workflow and usability review. Mentors are not full-time on this.
 - **Prerequisites:** able to ship production software independently, comfortable reading an unfamiliar codebase, and willing to spend as much time with users as with code. This is not an entry-level engineering course.
 - **Tooling:** participants use the client's approved stack and AI tooling. Claude Code, Codex, or another coding agent can accelerate delivery, but no particular tool is the point of the program.
 - **Existing assets:** an engagement brief template, a discovery-build starter, security and data-handling rules, a decision-log template, and the AI Excellence Playbook. If these do not exist, building them is Week 0 and belongs to program leadership, not the cohort.
@@ -18,15 +18,15 @@ Change these and the structure still holds, but the pacing will shift.
 
 ## The thesis of the program
 
-A product engineer is usually given a problem that has already been translated: a ticket, a design, an acceptance criterion, a system boundary. A forward-deployed engineer works before that translation is complete. They sit close enough to the client's operation to see where the stated request is wrong, incomplete, or aimed at a symptom, then stay responsible long enough to put a durable change into use.
+A product engineer is usually given a problem that has already been translated: a ticket, a design, an acceptance criterion, a system boundary. A CAST engineer works before that translation is complete. They sit close enough to the client's operation to see where the stated request is wrong, incomplete, or aimed at a symptom, then stay responsible long enough to put a durable change into use.
 
 The program teaches a repeatable form of product and technical judgment under client pressure: observe before proposing, turn ambiguity into testable claims, select the smallest useful change, and stay responsible until the client can use and own the result.
 
-The course changes the starting point: where a product engineer typically receives a translated requirement, a forward-deployed product engineer starts with an unclear operational need and must clarify it, define the product outcome, select what to build, and verify that it works in the operation.
+The course changes the starting point: where a product engineer typically receives a translated requirement, a CAST engineer starts with an unclear operational need and must clarify it, define the product outcome, select the right intervention, and verify that it works in the operation.
 
 The engineer does not replace every product, design, commercial, or client role. The engineer owns the product thread inside the agreed boundary. This thread connects user evidence, product decisions, technical work, adoption, and outcomes.
 
-If involvement stops at advice, discovery, or a demo without shipping, the work is consulting or prototyping under a different title. The governing idea is therefore the same one that anchors the forward-deployed designer program:
+If involvement stops at advice, discovery, or a demo without shipping, the work is consulting or prototyping under a different title. The governing idea is therefore the same one that anchors the related design program:
 
 > **Everything you build is in one of two states, and you always know which one. Moving between them is a decision someone signs off on, never something that just happens.**
 
@@ -86,6 +86,24 @@ Use this loop in each course exercise and client engagement.
 
 The documents serve as evidence of product judgment, not as the product itself. The learner must explain why the work matters, why it has this order, and what evidence can change the plan.
 
+### Product thinking is the decision layer
+
+Product thinking is not a set of ceremonies or a requirement to behave like a product manager. It is the habit of making explicit choices about who matters, which problem is worth solving, what should change in their behavior or operation, and how the organization will know the change created value.
+
+For every proposed intervention, the learner should be able to answer:
+
+| Product question | Evidence to seek | Decision it supports |
+|---|---|---|
+| Who has the job and who experiences the pain? | Recent cases, role observation, workflow evidence | Whose problem is primary and whose needs are constraints? |
+| What is the job, not just the request? | Trigger, current workaround, desired outcome | What problem are we actually addressing? |
+| Why is this worth changing now? | Baseline, frequency, cost, risk, strategic context | Whether to act, wait, or do nothing |
+| What alternatives exist? | Process change, configuration, existing product, integration, build | Which intervention has the best value and ownership profile? |
+| What behavior or operational result should change? | Target flow, adoption evidence, outcome metric | What success means and how it will be observed |
+| What must be true for the intervention to work? | Desirability, feasibility, viability, safety, and adoption assumptions | What to test before committing more effort |
+| Who will own it after delivery? | Support model, technical owner, process owner, rollout plan | Whether the result can survive the engagement |
+
+The engineer is not expected to make every decision alone. They are expected to surface the decision, make the options and tradeoffs legible, bring in the right owner, and keep the work connected to a user and an outcome.
+
 ---
 
 ## Module 0: The role and its edges
@@ -94,9 +112,9 @@ The documents serve as evidence of product judgment, not as the product itself. 
 Content:
 
 - Why the role exists: the failure is usually translation between a general capability and a specific operation, not a shortage of features.
-- The distinction between product engineering, solutions engineering, consulting, and forward-deployed engineering. The boundaries overlap; ownership through production use is the defining feature here.
+- The distinction between product engineering, solutions engineering, consulting, and CAST engineering. The boundaries overlap; ownership through production use is the defining feature here.
 - State A, State B, the four discovery questions, and the promotion rule.
-- **Authority boundaries.** The things a forward-deployed engineer never decides alone: commercial commitments, scope changes, production access, data-use exceptions, compliance interpretations, promotion, and long-lived architecture that the client will inherit.
+- **Authority boundaries.** The things a CAST engineer never decides alone: commercial commitments, scope changes, production access, data-use exceptions, compliance interpretations, promotion, and long-lived architecture that the client will inherit.
 - The escalation path, with actual names and response expectations attached.
 
 Output: each participant writes and says aloud a short explanation of a discovery build to a hypothetical client. It must name the question, the evidence sought, and what is intentionally absent. If it sounds like a disclaimer or a sales pitch, it has failed.
@@ -130,7 +148,16 @@ The goal is to make engineers capable of understanding a client's operation with
 - Define an outcome measure before choosing a feature.
 - Write assumptions as assumptions, not as facts hidden inside a solution proposal.
 
-### 1.4 Clarification and current user flow
+### 1.4 Product framing and opportunity selection
+
+- Distinguish the operator, end user, customer, sponsor, buyer, and beneficiary. They may be different people with different definitions of value.
+- Describe the job the person is trying to complete, the constraint that makes it difficult, and the consequence of leaving it unchanged.
+- Consider process or policy change, configuration, an existing product, integration, and doing nothing alongside a custom build.
+- Write a product hypothesis: the user, the problem, the proposed intervention, the expected behavior or outcome change, and the evidence that would confirm or disprove it.
+- Separate an outcome metric from a feature-completion metric. A shipped workflow is not proof that the operation improved.
+- Identify adoption conditions: what the user must trust, stop doing, learn, or receive from another team for the change to work.
+
+### 1.5 Clarification and current user flow
 
 - Identify questions that can change scope, value, safety, adoption, or cost.
 - Ask about recent behavior before you ask about preferences.
@@ -140,21 +167,21 @@ The goal is to make engineers capable of understanding a client's operation with
 - Add alternate paths, exceptions, waits, handoffs, and manual work.
 - Ask operators to correct the map.
 
-### 1.5 Explaining systems without hiding behind jargon
+### 1.6 Explaining systems without hiding behind jargon
 
 - Start with what the system enables, then explain mechanism only as far as the audience needs.
 - Translate tradeoffs into consequences: time, reliability, access, cost, reversibility, and ownership.
 - Draw the system as people, actions, systems, data, and boundaries before drawing services and queues.
 - Say "I don't know yet" with a concrete plan to find out.
 
-### 1.6 Client-room mechanics
+### 1.7 Client-room mechanics
 
 - Set an agenda around a decision, not a tour of topics.
 - Ask one question at a time and allow silence.
 - Close every session with decisions, open questions, owners, and dates.
 - Send a concise written playback while disagreements are still cheap.
 
-**Module assessment:** observe a real or simulated workflow. Produce a one-page user-flow map and a stakeholder map. List the important unknowns. Ask clarification questions. Then play back the problem and desired outcome to the people involved. The assessment passes only if operators confirm the main flow and correct at least one specific detail.
+**Module assessment:** observe a real or simulated workflow. Produce a one-page user-flow map, stakeholder map, product framing, and product hypothesis. List the important unknowns and alternatives to building. Ask clarification questions. Then play back the problem, desired outcome, and proposed next decision to the people involved. The assessment passes only if operators confirm the main flow and correct at least one specific detail.
 
 ---
 
@@ -172,6 +199,8 @@ Before code, write one page covering:
 - the current workflow and the people affected;
 - the problem, its evidence, and the baseline;
 - the outcome and how it will be observed;
+- why this problem is worth acting on now;
+- the product hypothesis and alternatives considered;
 - the decision this piece of work should enable;
 - the named State A question or State B outcome;
 - scope, non-goals, dependencies, and authority boundaries;
@@ -209,12 +238,22 @@ The brief is the smallest shared contract that keeps technical speed attached to
 ### 2.5 Product priority
 
 - Rank work by user value, risk, uncertainty, safety, adoption, dependencies, and effort.
+- Compare build, buy, configure, process change, and do-nothing options before treating implementation as the default.
+- Consider reach or frequency, confidence in the evidence, reversibility, and the ongoing cost of ownership; do not hide judgment inside an unexplained score.
 - Put the smallest useful end-to-end story first.
 - Do not put infrastructure first unless it blocks the useful story.
 - Record why work is first, later, or out of scope.
 - State what evidence can change the order.
 
-### 2.6 Technical reconnaissance
+### 2.6 Product decision and measurement
+
+- State the decision in one sentence: who decides, which options are being considered, and by when.
+- Define one outcome measure, one or two behavior or adoption measures, and guardrails for safety, quality, cost, or workload.
+- Make the baseline, target, observation window, data source, and owner explicit.
+- Distinguish leading signals that tell you whether people are trying the change from lagging signals that show whether the operation improved.
+- Include the status-quo option. A product decision is sometimes to stop, defer, simplify, or change the process rather than build.
+
+### 2.7 Technical reconnaissance
 
 - Map systems, owners, interfaces, data stores, environments, and release paths.
 - Test access and assumptions early. "The API exists" is not evidence that the required data, permission, latency, or support agreement exists.
@@ -222,21 +261,21 @@ The brief is the smallest shared contract that keeps technical speed attached to
 - Identify rate limits, data quality, residency, retention, audit, identity, and human-approval constraints.
 - Record unknowns. Do not turn missing information into optimistic architecture.
 
-### 2.7 Choosing the thinnest useful slice
+### 2.8 Choosing the thinnest useful slice
 
 - Select one operational path, one user group, and one measurable outcome.
 - Preserve the risky part; fake the plumbing around it, because a build that mocks the central uncertainty cannot change the decision.
 - Prefer manual operations behind a clean boundary when they buy learning safely.
 - State what will not be learned from the slice.
 
-### 2.8 Designing with the client, not for them
+### 2.9 Designing with the client, not for them
 
 - Bring operators and the client's technical team into decisions that affect their work.
 - Use prototypes and diagrams as questions, not as presentations to approve.
 - Surface constraints while choices are reversible.
 - Treat client conventions as part of the requirement, since a solution the client cannot own or maintain fails regardless of its technical quality.
 
-### 2.9 AI-assisted delivery
+### 2.10 AI-assisted delivery
 
 - Give coding agents the engagement brief, repository rules, and the smallest relevant context.
 - Use agents for reconnaissance and options, but verify every claim against the code, environment, or an owner.
@@ -245,9 +284,9 @@ The brief is the smallest shared contract that keeps technical speed attached to
 - Never put client credentials, production data, or restricted material into an unapproved tool.
 - Stop when the tool crosses a boundary you did not intend; moving quickly does not make unauthorized access acceptable.
 
-Before implementation, compare the proposed tasks with the brief and user stories. Remove tasks that do not support an accepted story. Add missing work for acceptance, exceptions, adoption, and measurement.
+Before implementation, compare the proposed tasks with the brief, product hypothesis, user stories, and measurement plan. Remove tasks that do not support an accepted story or a necessary learning goal. Add missing work for acceptance, exceptions, adoption, and measurement.
 
-**Module assessment:** use a messy client request and a representative system. Produce an engagement brief, a validated user flow, prioritized user stories, acceptance conditions, a technical reconnaissance map, and a thin-slice plan. Explain why the first story is first. Explain which requests you excluded. Defend what the slice proves, what it cannot prove, and which evidence will stop or change the work.
+**Module assessment:** use a messy client request and a representative system. Produce an engagement brief, product hypothesis, alternatives table, validated user flow, prioritized user stories, acceptance conditions, measurement plan, technical reconnaissance map, and thin-slice plan. Explain why the first story and intervention are first. Explain which requests you excluded. Defend what the slice proves, what it cannot prove, and which evidence will stop or change the work.
 
 ---
 
@@ -260,6 +299,7 @@ The core risk is that a technically working system can still be wrong for the op
 
 - Define the observation that would change the decision before building.
 - Test with the people who perform the work, not only the sponsor.
+- Test the product hypothesis: can the intended user complete the job, will they choose the new path, and does the change create enough value to justify ownership?
 - Use representative edge cases and record where sample data limits the conclusion.
 - Keep an evidence log: claim, observation, source, confidence, and implication.
 - Catalog every fiction as it is introduced.
@@ -270,7 +310,8 @@ The core risk is that a technically working system can still be wrong for the op
 
 - Threat modeling, privacy review, access control, auditability, and data lifecycle.
 - Failure modes, retries, idempotency, graceful degradation, and manual fallback.
-- Observability tied to the user's outcome, not only infrastructure health.
+- Observability tied to the user's outcome, adoption, and guardrails, not only infrastructure health.
+- A feedback loop that gives the process owner evidence to stop, adjust, expand, or transfer the capability.
 - Migration, rollback, feature flags, support ownership, and runbooks.
 - Performance, cost limits, and realistic load.
 - Client release processes and change controls take precedence over personal preference.
@@ -309,13 +350,15 @@ Required deliverables:
 2. **The faked list.** Everything fictional or manually operated, plus what a real version requires.
 3. **The decision log.** Choices, assumptions, constraints, and deliberate deferrals.
 4. **The open questions.** What remains unresolved and why it matters.
-5. **The recommendation.** Stop, test again, build a different slice, or propose promotion.
+5. **The product case.** The user, outcome, alternatives considered, adoption conditions, and ongoing ownership implication.
+6. **The recommendation.** Stop, test again, build a different slice, or propose promotion.
 
 ### 5.2 Handing off production work
 
 - Name the service owner, support owner, data owner, and business owner.
 - Document decisions and operating procedures, not a tour of code the repository already contains.
 - Train the people who administer and support the system.
+- Name an adoption owner and agree how usage, outcome movement, exceptions, and user feedback will be reviewed.
 - Prove monitoring, alert routing, rollback, recovery, and manual fallback.
 - Close access that was granted for the engagement and return or remove client data according to policy.
 - Hold an explicit end-of-engagement review: outcome, remaining risks, debt, ownership, and next decision.
@@ -327,7 +370,8 @@ Required deliverables:
 3. The faked list becomes the hardening work list.
 4. Security, data, compliance, operational, UX, and adoption gaps are included.
 5. Delivery and ongoing ownership are scoped before work starts.
-6. The artifact is relabeled State B and follows the client's production controls.
+6. The outcome measures, guardrails, review cadence, and stop or rollback conditions are agreed.
+7. The artifact is relabeled State B and follows the client's production controls.
 
 **Assessment:** run a promotion review. Passing requires making the real work visible, including the option not to promote.
 
@@ -378,13 +422,13 @@ The Supported → Embedded gate is primarily about judgment under ambiguity. Tec
 The program fails without these, and none are the cohort's responsibility.
 
 - Real operators with protected time; validating with the sponsor alone does not substitute for access to the people doing the work.
-- A senior forward-deployed engineer with allocated mentoring time.
+- A senior CAST engineer with allocated mentoring time.
 - A senior client lead who owns scope, pricing, and relationship escalation.
 - Access to design, security, data, and compliance partners at defined gates.
 - An approved discovery environment and representative, appropriately handled data.
 - Versioned templates for the engagement brief, evidence log, faked list, decision log, and production readiness review.
 - A safe first engagement: narrow scope, cooperative client, reversible change, and no critical-path launch.
-- A policy for support and ownership after the forward-deployed engineer leaves.
+- A policy for support and ownership after the CAST engineer leaves.
 - A commercial answer for discovery that creates unplanned production demand.
 
 ---
@@ -405,4 +449,4 @@ The program fails without these, and none are the cohort's responsibility.
 
 **Prototype laundering.** Good engineering hygiene makes State A code look safer than it is. Clean code does not replace threat modeling, support ownership, data controls, rollout, or adoption work.
 
-**Permanent embed.** The client routes every hard problem to the forward-deployed engineer. The role succeeds when client capability increases, not when dependence increases.
+**Permanent embed.** The client routes every hard problem to the CAST engineer. The role succeeds when client capability increases, not when dependence increases.
